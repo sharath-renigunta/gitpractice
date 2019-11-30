@@ -1,0 +1,229 @@
+What is DevOps?
+Why DevOps?
+What is DevOps?
+DevOps Stages
+DevOp Tools
+DevOps Use Case
+
+Waterfall Model:
+Linear and sequential.
+Requirement
+Design
+Implement
+Test
+Deploy
+Maintenance
+Limitations:
+  High amounts of risk and uncertainty
+  No working software is produced until late during the life cycle
+  Once it reaches the testing phase, it is difficult to go back and change something that was not well thought out in the concept stage.
+  Not good for Complex and OO Projects
+  Not suited for projects where requirements are at moderate to high risk of changing.
+Agile methodology
+Each project is broken into several iterations. All iterations must be of the same time duration b/w 2 to 4 weeks. At the end of each iteration, a working  product should be delivered. 
+Discover->Design->Develop->Test->Deploy
+Limitations:
+Dev part is Agile
+Operations were not stable. 
+
+Solution is DevOps
+Development Team and Operations Team.
+Good quality software in time.
+Happens thro tools of the devOps. 
+Continuous development and deployment. 
+Version control:
+Maintaining different version of the code. to maintain the code we use git. 
+continuous integration: Pull the code and prepare the build: Compiling, validating, code review, UNit testing and integration testing. 
+Jenkins will do the job.
+Continuous deployment is done with Dockers. Continuous monitoring is done later.
+Source Code Management: 
+clear is used to clear the screen.     
+git init
+
+
+
+------------------------------
+Docker in DevOps:
+Docker is a platform for packaging, deploying and running an Application. Docker Applications run in containers that can be used on any system: a Developer's laptop, systems in premises as well as in the Cloud. The feature of containing software inside containers is called Containerization. 
+
+Containerization is a technology that packages the applications as images that contain everything needed to execute them: code, runtime Environment, libraries and configurations. Images run in containers which are processes that manage the application that it contains by using resources on a need based for that executable. 
+
+Imp: Docker containers don't run on kind of virtual machines, instead share a Linux kernel. With this, it consumes less memory and CPU. Linux runtime is still required by the Docker. So other OS like Mac and Windows use a single Linux virtual machine on which the containers will reside and share the system. 
+
+Features and Advantages:
+Consistent test environment for development as well as operations.
+Ability to scale the application efficiently in real time. 
+Cross platform packages called as Images. 
+Isolation and encapsulation of app dependencies.
+U could reuse the same images for various apps. 
+
+Docker supports various kinds of images(Mostly open source) that can be installed into the environment and can consume. Dockers are now even having repositories like GIT so that U don't need to link Ur code files from an external tool.  
+
+How to work with Docker?
+U could install the Docker Software from the hub.docker.com website. U need to install Docker Desktop into the machine.   
+Once installed U can run any docker image. 
+Command to execute a image:docker run imageName
+Docker initially looks for the image that has been asked for. When it cant find the image, it downloads the image from the Docker hub. Finally when all the installation is completed, U will be ready to consume the Image. 
+docker ps -a: Provides the Lists of all the container that are available within the local machine.  
+
+With the latest version of docker, U could create repositories into UR docker and consume it as an image within UR local machine. It can be configured to other repository tools like Github and bitbucket. 
+
+
+-----------------------------------------------------------
+Jenkins:
+Continuous Integration:
+In DevOps, we integrate various stages of development like coding, testing, integration and finally execute into a single unit. 
+As a part of the coding structure, we implement small changes in code and version control methods very frequently. Developers would push the code into a shared repository multiple no of times.  U should be able to update all the changes made by the developer team on all conditions and watch for any changes made by the team. For any change made, the system should be able pull the new changes, build the system, test it and finally deploy it to the client environment. This is called as Continuous integration.
+Continuous integration is implemented in DevOps using a tool called Jenkins.
+Advantages of continuous integration:
+Integration done once, need not be repeated all the time. 
+Ease to testers.
+Decrease the deployment time by automating the whole process. 
+How the process works?
+Developers make continuous changes to the DVC(Git). Code is pulled over every commit made in the source code. Every change made in the source code is build continuously. Every build will run through a series of unit tests prescribed by the GIT. Finally if all the test cases are successful, the tool deploys it on the Production Environment(Docker or the System). Finally e2e testing is completed and left for Operations to take over. 
+
+Jenkins is an automation tool created in Java with lots of pluggins for continuous integration tasks. It is used to build and test the projects making it easier to integrate the changing codes without a need to recheck again and again. It also allows us to continuously deliver our product using deployment tools.
+  
+Advantages of JENKINS?
+Open source and free of cost. 
+Easily installable and configurable. 
+Portable on multiple platforms as its built using java. 
+Supports even cloud based architecture. 
+
+Disadvantages:
+Its a server so it needs an Admin to maintain it.
+It does not have a neat user interface, most of the time, it works using CLI.
+It is created on distributed build pattern, so U will have a multiple version: Server version and the Node version(found in local machine). 
+
+Architecture:
+Will have 2 components: Jenkins Master and Jenkins Slave(Node).
+The main server of the Jenkins is called as the Master. It is a web dashboard running on port no 8080. With the dashboard, U could configure jobs/projects. Building of the project happens in Nodes. 
+Master does the important works like:
+Scheduling build jobs
+Monitor the nodes across multiple platforms. Node slaves can reside on multiple platforms like linux, windows, mac and even Android devices. 
+Record and report the build results. 
+
+The Jenkins slave is used to execute the build jobs dispatched by the master server. U could configure a project to run on a particular slave machine.
+The master ensures that the workload is distributed among all the slaves of the server. 
+
+Installation requirements:
+Any OS. Java 8.0 or later to work on Jenkins. 
+Once the Jenkins server is installed in the local machine, U should be able to download the pluggins required for Ur Automation. The source code of the testing would be obtained either from the local directory or from a DVS(like git or bitbukket). 
+Create a task or job into the server. give a name to it. Source code management should be set to UR respective folder or the GIT REPO. All the build process will now take the source code from the DVS URL mentioned in the link. 
+
+Creating Users.
+U could install the users using the settings provided by JENKINS
+
+-----------------------
+
+
+Kubernetes Notes:
+Koob-er-NET-es(k8s) It is the defacto std for deploying containerized applications in private, public and hybrid cloud environments. The popular cloud platforms like AWS, Google cloud, Azure, IBM Cloud and Oracle Cloud provide managed services for Kubernetes.
+Basically its an open source container management tool hosted by Cloud Native Computing Foundation(CNCF). It comes with a capability of automated deployment, scaling of the Apps and operations of application containers across the clusters. 
+More advanced than Docker to host applications from multiple locations into a cloud environment. 
+Features:
+Continuous development, integration and deployment. 
+Like Docker its Containerized infrastructure.
+Application centric Management. 
+Mixing the features of Docker and Jenkins but deployable on cloud.
+It can run application on clusters of physical and virtual machine infrastructure. 
+"It helps in moving from host-centric infrastructure to container centric Infrastructure"
+
+Kubernetes follows client-server architecture. 
+It will have Master server that controls the Application.
+It will be linked to a cluster of machines called as NODES. Each node is a terminal with its own OS and components like Docker, Kubelet and Kubernetes Proxy. Each node represents a Workstation on which a certain part of the Application is developed. 
+
+Components of Kubernetes Master machine:
+etcd: Stores config information which will be used by each node within the cluster. It will have info in the form of key-value store that can be distributed among the nodes of the cluster.
+
+API Servers:
+The Actual Microservices, components are stored in the API server. All the operations of UR application will be cut into independent services and each service is placed into this API Server.
+
+Controller Manager: The controller manager is more like a registry of all the nodes within a cluster. The manager will be responsible for adding and removing nodes, its location resources and is responsible for sending and collecting information from the nodes to the Main server. 
+
+Components of Kubernetes Node:
+Docker: 
+Each node is a Docker which helps in running the encapsulated Application container in a relatively isolated light weight OS.
+Kubelet: Is a small service in each node responsible for relaying info to and from the node. It also manages the network, its rules and port forwarding.  
+Kubernetes proxy service: The proxy service of the Kubernetes runs on each node in making the services available for the external hosts and clients who consume it.
+
+Software required:
+Docker Desktop Installation.
+Enable Kubernetes into the the Docker Desktop. 
+Once the kubernetes is enabled, all the Docker images will be placed into the Kubernetes cluster. Each cluster image is accesible from the command line interface(CLI).  
+ 
+
+-------------------------
+
+
+Advanced Software methodologies:
+A set of tools and design methodologies for developing software that is easily developed, deployed and maintainable. 
+Latest Development methodology is Agile Methodology. Agile is a time boxed, iterative approach to software delivery that builds software incrementally from the start of the project, instead of trying to deliver it all at once near the end.
+It works by breaking projects down into little bits of user functionality called user stories, prioritizing them, and then continuously delivering them in short two week cycles called iterations.
+How does it work?
+Make a list with UR Clients
+Decide on the duration
+Set proirities.
+Start Executing.
+Evaluate and generate reports. 
+Move to the next iteration. 
+
+Analysis, design, coding, and testing are continuous activities. Iterative development means starting with something really simple, and adding to it incrementally over time.
+
+User stories are features our customers might one day like to see in their software.
+Estimation is the time bound based on on ur previous experience and will be relative to the previous iterations that U have done. This style of estimation (relative over absolute) forms the corner stone of Agile Planning. By sizing our stories relatively, and feeding actuals back into our plan, we can make some really accurate predictions about the future while based on what we've done in the past.
+An Agile iteration is a short one to two week period where a team takes a couple of their customers most important user stories and builds them completely as running-tested-software.
+Agile planning is nothing more than measuring the speed a team can turn user stories into working, production-ready software and then using that to figure out when they’ll be done.
+Unit tests are snippets of test code developers write to prove to themselves that what they are developing actually works. Think of them as codified requirements.
+Continuous Integration: Continuous integration is about keeping it all together. On a team of more than one, you are going to have people checking code in all the time. We need a way to make sure that all the code integrates, all the unit tests pass, and a warning if anything goes wrong.
+
+Agile Tools:
+For planning and management point: JIRA. 
+For Code sharing and Version controlling: GIT
+To deployment scenarios : Docker
+To automate continuous integration: JENKINS. 
+To combine multiple Dockers and unit into a full fledged App: Kubenetes. 
+
+This list of comprehensive developement tools for managing the Appp development into small units with both development and operations is what is called as DevOps. 
+ Microservices: When developing Agile Methodology, Ur programs are not huge, they are small self contained units with little or no dependency. Even if they are dependent, it would be loosly coupled components. 
+At its core, microservice architecture involves developing software applications using smaller modular services rather than building software as one, large unified block of code called monoliths. Microservices work independently with other services, giving the software greater flexibility. Yet, well-built microservices can also work together when needed, ensuring end users never feel like their experience is fragmented in any way. It can be built on any technology of Ur choice and make it self contained unit.
+
+Version controlling tool: GIT:
+Version control allows you to keep track of your work and helps you to easily explore the changes you have made, be it data, coding scripts, notes, etc. 
+Keep track of the code history in an easy manner. makes it easy for you to keep track of collaborative and personal projects - all files necessary for certain analyses can be held together and people can add in their code, graphs, etc. as the projects develop.
+Respository:  Repository (repo) as a “master folder”, everything associated with a specific project should be kept in a repo for that project.
+Commit
+Once you’ve saved your files, you need to commit them - this means the changes you have made to files in your repo will be saved as a version of the repo, and your changes are now ready to go up on GitHub (the online copy of the repository).
+
+Pull
+Now, before you send your changes to Github, you need to pull, i.e. make sure you are completely up to date with the latest version of the online version of the files - other people could have been working on them even if you haven’t.
+
+Push
+Once you are up to date, you can push your changes - at this point in time your local copy and the online copy of the files will be the same. 
+
+Commands: 
+How to link the repo to ur git bash
+How to set credentials to ur account.
+How to get the copy of the folders into ur directory.(clone)
+How to initialize git into ur folder. 
+How to commit the new content into the secondary folder. 
+How to push the content of the secondary folder to the remote repo. 
+
+Build the Application by pulling the source code from Git, build it and place it in Docker using JENKINS.
+Clone the source code from the git hub.
+Build the Application using UR App tools.
+Link Jenkins into pull the data from Git folder.
+Place the exe File in the docker container. 
+run the docker.  
+Commands: install the docker
+run the image.
+list the images installed in the docker. 
+run the commands of the image..
+Configure the JENKINS to map to the docker image..
+
+
+
+
+  
+
+
